@@ -8,7 +8,7 @@
     using Antlr.Runtime;
     using Antlr.Runtime.Tree;
 
-    public abstract class TreeNode : CommonTree, IComparable<TreeNode>
+    public abstract partial class TreeNode : CommonTree, IComparable<TreeNode>
     {
         protected internal readonly Type inputType;
 
@@ -56,6 +56,8 @@
                 return result;
             }
         }
+
+        
 
         public abstract Expression BuildLinqExpression(
             IQueryable query, Expression expression, Expression item = null);
